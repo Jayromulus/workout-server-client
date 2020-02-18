@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import APIURL from '../../helpers/environment';
 
 const WorkoutEdit = (props) => {
     const [editDesc, setEditDesc] = useState(props.workoutToUpdate.description);
@@ -8,7 +9,7 @@ const WorkoutEdit = (props) => {
 
     const updateCurrent = (event) => {
         event.preventDefault()
-        fetch(`http://localhost:4000/api/log/update/${props.workoutToUpdate.id}`, {
+        fetch(`${APIURL}/api/log/update/${props.workoutToUpdate.id}`, {
             method: 'PUT',
             headers: new Headers({
                 'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 // imports
 import React, { useState } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import APIURL from '../../helpers/environment'
 
 // a function
 const WorkoutCreate = (props) => {
@@ -11,7 +12,7 @@ const WorkoutCreate = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        fetch('http://localhost:4000/api/log',{
+        fetch(`${APIURL}/api/log`,{
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json',

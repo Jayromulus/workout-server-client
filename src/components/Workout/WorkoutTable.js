@@ -1,11 +1,12 @@
 import React from 'react'
 import { Table, Button } from 'reactstrap'
+import APIURL from '../../helpers/environment'
 
 const WorkoutTable = (props) => {
 
     const deleteWorkout = (workout) => {
         console.log(workout.id)
-        fetch(`http://localhost:4000/api/log/delete/${workout.id}`, {
+        fetch(`${APIURL}/api/log/delete/${workout.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

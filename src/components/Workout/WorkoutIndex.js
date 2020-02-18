@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import WorkoutCreate from './WorkoutCreate'
 import WorkoutTable from './WorkoutTable'
 import WorkoutEdit from './WorkoutEdit'
+import APIURL from '../../helpers/environment'
 
 function WorkoutIndex(props) {
     const [workouts, setWorkouts] = useState([]);
@@ -23,7 +24,7 @@ function WorkoutIndex(props) {
     }
 
     const fetchWorkouts = () => {
-        fetch('http://localhost:4000/api/log',{
+        fetch(`${APIURL}/api/log`,{
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
